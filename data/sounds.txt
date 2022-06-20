@@ -1,0 +1,7 @@
+5
+
+bluefireshooting data/bluefireshooting.wav
+redeyeshooting data/redeyeshooting.wav
+bgmusic data/test1.wav
+robotRshooting data/robotRshooting.wav
+megamanhurt data/hurt1.wav
