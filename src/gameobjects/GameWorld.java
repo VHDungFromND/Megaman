@@ -83,16 +83,7 @@ public class GameWorld {
     }
     
     private void initEnemies(){
-        // ParticularObject redeye = new RedEyeDevil(1250, 410, this);
-        // redeye.setDirection(ParticularObject.LEFT_DIR);
-        // redeye.setTeamType(ParticularObject.ENEMY_TEAM);
-        // particularObjectManager.addObject(redeye);
-        
-        // ParticularObject smallRedGun = new SmallRedGun(1600, 180, this);
-        // smallRedGun.setDirection(ParticularObject.LEFT_DIR);
-        // smallRedGun.setTeamType(ParticularObject.ENEMY_TEAM);
-        // particularObjectManager.addObject(smallRedGun);
-        
+
         ParticularObject darkraise = new DarkRaise(656, 210, this);
         darkraise.setTeamType(ParticularObject.BOT_TEAM);
         particularObjectManager.addObject(darkraise);
