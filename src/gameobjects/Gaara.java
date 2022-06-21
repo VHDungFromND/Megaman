@@ -11,7 +11,7 @@ public class Gaara extends Human {
     
     public boolean startBulletTime=false;
     public long lastSuperAttackTime;
-    // private AudioClip hurtingSound;
+
     private AudioClip Punch1;
     
     public Gaara(float x, float y, GameWorld gameWorld) {
