@@ -109,43 +109,6 @@ public class GameWorld {
                     if(currentSize < textTutorial.length()) currentSize++;
                 }
                 break;
-        //     case MEETFINALBOSS:
-        //         if(storyTutorial == 0){
-        //             if(openIntroGameY >= 450) {
-        //                 openIntroGameY-=1;
-        //             }
-        //             if(camera.getPosX() < finalBossX){
-        //                 camera.setPosX(camera.getPosX() + 2);
-        //             }
-                    
-        //             if(naruto.getPosX() < finalBossX + 150){
-        //                 naruto.setDirection(ParticularObject.RIGHT_DIR);
-        //                 naruto.run();
-        //                 naruto.Update();
-        //             }else{
-        //                 naruto.stopRun();
-        //             }
-                    
-        //             if(openIntroGameY < 450 && camera.getPosX() >= finalBossX && naruto.getPosX() >= finalBossX + 150){ 
-        //                 camera.lock();
-        //                 storyTutorial++;
-        //                 naruto.stopRun();
-        //                 physicalMap.phys_map[14][120] = 1;
-        //                 physicalMap.phys_map[15][120] = 1;
-        //                 physicalMap.phys_map[16][120] = 1;
-        //                 physicalMap.phys_map[17][120] = 1;
-                        
-        //                 // backgroundMap.map[14][120] = 17;
-        //                 // backgroundMap.map[15][120] = 17;
-        //                 // backgroundMap.map[16][120] = 17;
-        //                 // backgroundMap.map[17][120] = 17;
-        //             }
-                    
-        //         }else{
-                
-        //             if(currentSize < textTutorial.length()) currentSize++;
-        //         }
-        //         break;
         }
     }
     
@@ -180,20 +143,10 @@ public class GameWorld {
                 }
                 
                 break;
-            // case MEETFINALBOSS:
-            //     yMid = GameFrame.SCREEN_HEIGHT/2 - 15;
-            //     y1 = yMid - GameFrame.SCREEN_HEIGHT/2 - openIntroGameY/2;
-            //     y2 = yMid + openIntroGameY/2;
-
-            //     g2.setColor(Color.BLACK);
-            //     g2.fillRect(0, y1, GameFrame.SCREEN_WIDTH, GameFrame.SCREEN_HEIGHT/2);
-            //     g2.fillRect(0, y2, GameFrame.SCREEN_WIDTH, GameFrame.SCREEN_HEIGHT/2);
-            //     break;
         }
     }
     
     public void Update(){
-        // System.out.println(state);
         if(System.currentTimeMillis()-blinkTime>500 && System.currentTimeMillis()-blinkTime<1000) {
             color = new Color(0,0,0,255);
         } else if(System.currentTimeMillis()-blinkTime<500) {
@@ -230,19 +183,6 @@ public class GameWorld {
                 physicalMap.Update();
                 
                 
-                // if(naruto.getPosX() > finalBossX && finalbossTrigger){
-                //     finalbossTrigger = false;
-                //     switchState(TUTORIAL);
-                //     tutorialState = MEETFINALBOSS;
-                //     storyTutorial = 0;
-                //     openIntroGameY = 550;
-                    
-                //     boss = new FinalBoss(finalBossX + 700, 460, this);
-                //     boss.setTeamType(ParticularObject.ENEMY_TEAM);
-                //     boss.setDirection(ParticularObject.LEFT_DIR);
-                //     particularObjectManager.addObject(boss);
-
-                // }
                 
                 if(naruto.getState() == ParticularObject.DEATH || gaara.getState() ==ParticularObject.DEATH){
                     numberOfLife --;
@@ -281,14 +221,6 @@ public class GameWorld {
         Graphics2D g2 = (Graphics2D) bufferedImage.getGraphics();
         g2.setColor(color);
         if(g2!=null){
-
-            // NOTE: two lines below make the error splash white screen....
-            // need to remove this line
-            //g2.setColor(Color.WHITE);
-            //g2.fillRect(0, 0, GameFrame.SCREEN_WIDTH, GameFrame.SCREEN_HEIGHT);
-            
-            
-            // physicalMap.draw(g2);
             
             switch(state){
                 // case INIT_GAME:
@@ -381,100 +313,3 @@ public class GameWorld {
         return bufferedImage;
     }
 }
-//     // @Override
-//     public void setPressedButton(int code) {
-//        switch(code){
-            
-//             case KeyEvent.VK_DOWN:
-//                 naruto.dick();
-//                 break;
-                
-//             case KeyEvent.VK_RIGHT:
-//                 naruto.setDirection(naruto.RIGHT_DIR);
-//                 naruto.run();
-//                 break;
-                
-//             case KeyEvent.VK_LEFT:
-//                 naruto.setDirection(naruto.LEFT_DIR);
-//                 naruto.run();
-//                 break;
-                
-//             case KeyEvent.VK_ENTER:
-//                 // if(state == GameWorld.INIT_GAME){
-//                 //     if(previousState == GameWorld.GAMEPLAY)
-//                 //         switchState(GameWorld.GAMEPLAY);
-//                 //     else switchState(GameWorld.TUTORIAL);
-                    
-//                 //     bgMusic.loop();
-//                 // }
-//                 if(state == GameWorld.TUTORIAL && storyTutorial >= 1){
-//                     if(storyTutorial<=3){
-//                         storyTutorial ++;
-//                         currentSize = 1;
-//                         textTutorial = texts1[storyTutorial-1];
-//                     }else{
-//                         switchState(GameWorld.GAMEPLAY);
-//                     }
-                    
-//                     // for meeting boss tutorial
-//                     if(tutorialState == GameWorld.MEETFINALBOSS){
-//                         switchState(GameWorld.GAMEPLAY);
-//                     }
-//                 }
-//                 break;
-                
-//             case KeyEvent.VK_SPACE:
-//                 naruto.jump();
-//                 break;
-                
-//             case KeyEvent.VK_A:
-//                 naruto.attack();
-//                 break;
-                
-//         }}
-
-//     // @Override
-//     public void setReleasedButton(int code) {
-//         switch(code){
-            
-//             case KeyEvent.VK_UP:
-                
-//                 break;
-                
-//             case KeyEvent.VK_DOWN:
-//                 naruto.standUp();
-//                 break;
-                
-//             case KeyEvent.VK_RIGHT:
-//                 if(naruto.getSpeedX() > 0)
-//                     naruto.stopRun();
-//                 break;
-                
-//             case KeyEvent.VK_LEFT:
-//                 if(naruto.getSpeedX() < 0)
-//                     naruto.stopRun();
-//                 break;
-                
-//             case KeyEvent.VK_ENTER:
-//                 if(state == GAMEOVER || state == GAMEWIN) {
-//                     gamePanel.setState(new MenuState(gamePanel));
-//                 } else if(state == PAUSEGAME) {
-//                     state = lastState;
-//                 }
-//                 break;
-                
-//             case KeyEvent.VK_SPACE:
-                
-//                 break;
-                
-//             case KeyEvent.VK_A:
-                
-//                 break;
-//             case KeyEvent.VK_ESCAPE:
-//                 lastState = state;
-//                 state = PAUSEGAME;
-//                 break;
-                
-//         }}
-	
-// }
